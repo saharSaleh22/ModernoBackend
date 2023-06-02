@@ -4,10 +4,11 @@ const products = new mongoose.Schema({
   title: String,
   description: String,
   price: Number,
-  color: String,
   image: String,
-  type: String,
-  like: Number,
+  email:String,
+  mobile:String,
+  address:String,
+  rating:Number,
 });
 
-module.exports = mongoose.model("products", products);
+module.exports = mongoose.model("userproducts", products);
