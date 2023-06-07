@@ -98,6 +98,20 @@ app.post("/order", async (req, res) => {
   let resultO = await order.save();
   res.send(resultO);
 });
+app.put("/order/:id", async (req, res) => {
+  try {
+    const orderId = req.params.id;
+    const updatedOrder = await Order.findByIdAndUpdate(
+      orderId,
+      { confirm: 1 },
+      { new: true }
+    );
+
+    res.send(updatedOrder);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
 app.delete("/order/:id", async (req, res) => {
   try {
     const orderId = req.params.id;

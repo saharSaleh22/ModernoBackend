@@ -5,8 +5,9 @@ const userSchema = new mongoose.Schema({
   quantity: Number,
   image: String,
   title: String,
-  price:Number,
+  price: Number,
   description: String,
+  confirm: Number,
 });
 
 module.exports = mongoose.model("orders", userSchema);
